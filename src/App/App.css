@@ -1,0 +1,16 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(148,231,55);
+  /* background-color: #79D70F; */
+  display: flex;
+  justify-content: center;
+}

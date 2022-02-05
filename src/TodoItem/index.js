@@ -1,0 +1,27 @@
+import React from "react";
+import "./TodoItem.css"
+
+function TodoItem (props) {
+
+    return (
+        <form className="todoItem">
+        
+            <input 
+            type="button" 
+            className={`checkButton ${props.toDoCompleted && "checkButton--active"}`} 
+            onClick={() => props.onToDoAlter("onCheck")}
+            />
+            
+            <p 
+            className={`TodoItemText ${props.toDoCompleted && "TodoItemText--active"}`}
+            >{props.toDoText}</p>
+
+            <input type="button" 
+            className="deleteButton"
+            onClick={() => props.onToDoAlter("onDelete")}
+            />
+        </form>
+    );
+}
+
+export { TodoItem };

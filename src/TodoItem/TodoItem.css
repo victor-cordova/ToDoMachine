@@ -1,0 +1,67 @@
+.todoItem {
+    width: 350px;
+    height: 40px;
+    background-color: rgb(237, 244, 242);
+    border: solid rgb(110,170,41) 3px;
+    /* color: rgb(225,147,44); */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    margin: 10px 0px;
+    position: relative;
+    
+}
+
+.deleteButton {
+    background: no-repeat url("../../public/images/delete.png") center;
+    border-radius: 50%;
+    background-size: 125%;
+    border: solid black 2px;
+
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: -8px;
+    /* bottom: 0px; */
+    top: -8px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    border: solid white 2px;
+    transition: 250ms;
+    transform-origin: center;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.checkButton {
+    background: no-repeat url("../../public/images/check.png") center;
+    border-radius: 50%;
+    background-size: 100%;
+    border-style: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.checkButton--active {
+    background: no-repeat url("../../public/images/checkCompleted.png") center;
+    border-radius: 50%;
+    background-size: 100%;
+    border-style: none;
+    width: 20px;
+    height: 20px;
+
+}
+
+.TodoItemText {
+    color: #f35c5c;
+    font-weight: 900;
+    font-size: 1.6rem;
+    font-family: cursive;
+}
+
+.TodoItemText--active {
+    text-decoration: line-through black 3px;
+}

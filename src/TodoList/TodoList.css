@@ -1,0 +1,9 @@
+ul {
+    list-style-type: none;
+}
+
+section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
