@@ -3,7 +3,6 @@ import React from "react";
 function useSearchToDo(toDos) {
 
   const [searchToDo, setSearchToDo] = React.useState("");
-  // console.log(searchToDo);
 
   let searchedToDos = [];
 

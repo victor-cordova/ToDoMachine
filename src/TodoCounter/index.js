@@ -1,13 +1,16 @@
 import React from "react";
-import "./TodoCounter.css"
+import { ToDoContext } from "../ToDoContext";
+import "./ToDoCounter.css"
 
-function TodoCounter (props) {
+function ToDoCounter () {
+    const { completedToDos, totalToDos } = React.useContext(ToDoContext);
+
     return (
         <React.Fragment>
             <h1 className="TodoTitle">To-do List</h1>
-            <h2 className="TodoCounter">{props.completedToDos} de {props.totalToDos} to-dos are done</h2>
+            <h2 className="TodoCounter">{completedToDos} de {totalToDos} to-dos are done</h2>
         </React.Fragment>
     );
 }
 
-export { TodoCounter };
+export { ToDoCounter };

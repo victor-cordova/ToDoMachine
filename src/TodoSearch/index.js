@@ -1,12 +1,19 @@
 import React from "react";
-import "./TodoSearch.css"
+import { ToDoContext } from "../ToDoContext";
+import "./ToDoSearch.css"
 
-function TodoSearch ({ setSearchToDo }) {
-
+function ToDoSearch () {
+    const { setSearchToDo, setFormsCreateToDo } = React.useContext(ToDoContext);
 
     const search = (event) => {
         const searchUser = event.target.value;
         setSearchToDo(searchUser);
+    }
+
+    const openModal = () => {
+        setFormsCreateToDo(true)
+        // const taskCreated = event.target.value;
+        // setCreatedToDo({ text:taskCreated, completed: false});
     }
     
     return (
@@ -18,12 +25,13 @@ function TodoSearch ({ setSearchToDo }) {
                 onChange={search}
             />
 
-            {/* <input 
+            <input 
                 type="button" 
-                className="searcherButton" 
-            /> */}
+                onClick={openModal}
+                className="createButton" 
+            />
         </form>
     );
 }
 
-export { TodoSearch };
+export { ToDoSearch };

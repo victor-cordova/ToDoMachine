@@ -1,15 +1,15 @@
 .todoItem {
-    width: 350px;
+    width: 345px;
     height: 40px;
     background-color: rgb(237, 244, 242);
     border: solid rgb(110,170,41) 3px;
-    /* color: rgb(225,147,44); */
     border-radius: 10px;
     display: flex;
     align-items: center;
     padding-left: 8px;
     margin: 10px 0px;
     position: relative;
+    flex: 0 0 auto;
     
 }
 
@@ -23,7 +23,6 @@
     height: 28px;
     position: absolute;
     right: -8px;
-    /* bottom: 0px; */
     top: -8px;
     cursor: pointer;
 }
@@ -44,6 +43,7 @@
     height: 20px;
     margin-right: 5px;
     cursor: pointer;
+    flex: 0 0 20px;
 }
 .checkButton--active {
     background: no-repeat url("../../public/images/checkCompleted.png") center;
@@ -60,6 +60,24 @@
     font-weight: 900;
     font-size: 1.6rem;
     font-family: cursive;
+    overflow: auto;
+
+}
+
+.TodoItemText::-webkit-scrollbar {
+    height: 9px;
+}
+
+.TodoItemText::-webkit-scrollbar-track {
+    background-color: #6eaa29;
+    border-radius: 6px;
+}
+
+.TodoItemText::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(76,175,80, 0.7);
+    cursor: pointer;
+    border: solid rgba(58,132,61,0.7) 2px;
 }
 
 .TodoItemText--active {

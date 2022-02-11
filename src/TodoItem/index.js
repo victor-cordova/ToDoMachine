@@ -1,7 +1,7 @@
 import React from "react";
-import "./TodoItem.css"
+import "./ToDoItem.css"
 
-function TodoItem (props) {
+function ToDoItem (props) {
 
     return (
         <form className="todoItem">
@@ -24,4 +24,4 @@ function TodoItem (props) {
     );
 }
 
-export { TodoItem };
+export { ToDoItem };

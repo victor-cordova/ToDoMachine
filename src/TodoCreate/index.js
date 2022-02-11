@@ -1,33 +1,47 @@
 import React from "react";
-import "./TodoCreate.css"
+import { ToDoContext } from "../ToDoContext";
+import "./ToDoCreate.css"
 
-function TodoCreate (props) {
-    
-    const create = (event) => {
+function ToDoCreate () {
+
+    const { setCreatedToDo, onCreate, setFormsCreateToDo } = React.useContext(ToDoContext);
+
+    const creating = (event) => {
         const taskCreated = event.target.value;
-        props.setCreatedToDo({ text:taskCreated, completed: false});
+        setCreatedToDo({ text:taskCreated, completed: false});
     }
 
+    const cancel = () => {
+        setCreatedToDo("");
+        setFormsCreateToDo(false)
+    }
     
     return (
-        <form className="createForm">
-            <input 
-            type="text" 
-            placeholder="Create task" 
-            className="creater"
-            onChange={create}
-            onKeyPress={event => {
-                if (event.key === "Enter") props.onCreate();
-            }}
-            />
-            <input 
-            type="button" 
-            className="createButton" 
-            onClick={props.onCreate}
-            />
-        </form>
+        <div className="forms">
+            <form className="formsCreate">            
+                <input 
+                type="button" 
+                className="cancelButtonForms" 
+                onClick={cancel}
+                />
+
+                <textarea 
+                    type="text"
+                    className={`todoItemText`}
+                    onChange={creating}
+                    onKeyPress={event => {
+                        if (event.key === "Enter") onCreate();
+                    }}
+                />   
+
+                <input type="button" 
+                className="saveButtonForms"
+                onClick={onCreate}
+                />
+            </form>
+        </div>
     );
 }
 
-export { TodoCreate };
+export { ToDoCreate };
 

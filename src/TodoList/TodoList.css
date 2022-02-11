@@ -1,5 +1,48 @@
-ul {
+.sectionList {
+    display: flex;
+    justify-content: center;
+}
+
+.divList {
     list-style-type: none;
+    height: 350px;
+    width: 390px;
+    margin-top: 20px;
+
+    padding-top: 15px;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divListScroll {
+    overflow-y: scroll;
+    justify-content: start;
+}
+
+.divList::-webkit-scrollbar {
+    width: 15px;
+}
+
+.divList::-webkit-scrollbar-track {
+    margin: 10px 0px;
+    background-color: #6eaa29;
+    border-radius: 6px;
+}
+
+.divList::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(76,175,80, 0.7);
+    cursor: pointer;
+    border: solid rgba(58,132,61,0.7) 2px;
+}
+
+.divList::-webkit-scrollbar-thumb:hover {
+    border: solid rgba(58,132,61, 1) 2px;
+    background-color: rgba(76,175,80, 1);
 }
 
 section {

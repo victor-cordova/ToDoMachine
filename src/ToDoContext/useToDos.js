@@ -27,7 +27,7 @@ function useToDos (itemName, initialValue) {
         setError(error);
       }
 
-    }, 1000);
+    }, 3000);
   }, []);
 
   const saveToDos = (updatedToDos) => { //Se creo esta funcion para cuando se quiera hacer 

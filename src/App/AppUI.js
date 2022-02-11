@@ -1,66 +1,42 @@
 import React from "react";
+import { ToDoContext } from "../ToDoContext";
+import { ToDoCounter } from "../ToDoCounter";
+import { ToDoSearch } from "../ToDoSearch";
+import { ToDoList } from "../ToDoList";
+import { ToDoItem } from "../ToDoItem";
+import { ToDoCreate } from "../ToDoCreate";
+import { ToDoLoading } from "../ToDoLoading";
+import {Modal} from "../modals";
 
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { TodoItem } from "../TodoItem";
-import { TodoCreate } from "../TodoCreate";
 
-
-function AppUI( {
-    completedToDos,
-    totalToDos,
-    searchedToDos,
-
-    
-    setSearchToDo,
-    
-    setCreatedToDo,
-
-    searchToDo,
-
-    onToDoAlter,
-
-    onCreate,
-
-    error,
-    loading
-}
-) {
+function AppUI() {
+    const { error, loading, searchedToDos, searchToDo, onToDoAlter, formsCreateToDo } = React.useContext(ToDoContext);
     return (
         <React.Fragment>
-            <TodoCounter
-                completedToDos={completedToDos}
-                totalToDos={totalToDos}
-            />
+            <ToDoCounter/>
 
-            <TodoCreate
-                onCreate={onCreate}
-                setCreatedToDo={setCreatedToDo}
-            />
-
-            <TodoSearch 
-                setSearchToDo={setSearchToDo}
-            />
-
-            <TodoList>
+            <ToDoSearch/>
+            
+            <ToDoList>
                 {error && <p>Something bad happened</p>}
-                {loading && <p>It's loading the to dos</p>}
+                {loading && <ToDoLoading/>}
                 {(!loading && !searchedToDos.length && !searchToDo) && <p>Make your first to do.</p>}
                 {(!loading && !searchedToDos.length && searchToDo) && <p>There's not to dos relates.</p>}
 
-                {
-                searchedToDos.map(searchedToDo => { 
-
-                    return <TodoItem 
-                    toDoText={ searchedToDo.text } 
-                    key={ searchedToDo.key } 
-                    toDoCompleted= { searchedToDo.completed }
-                    onToDoAlter={(onAlter) => onToDoAlter(searchedToDo.key, onAlter)}
+                {searchedToDos.map(searchedToDo => { 
+                    return <ToDoItem 
+                        toDoText={ searchedToDo.text } 
+                        key={ searchedToDo.key } 
+                        toDoCompleted= { searchedToDo.completed }
+                        onToDoAlter={(onAlter) => onToDoAlter(searchedToDo.key, onAlter)}
                     />
                 })}
-            </TodoList>
-      
+            </ToDoList>
+            
+            {formsCreateToDo && (
+                <Modal/>
+            )}
+            
         </React.Fragment>
     )
 }

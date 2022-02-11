@@ -9,11 +9,8 @@
 }
 
 .TodoCounter {
-    /* width: 100vw; */
-    /* font-size: 40px; */
     font-family: cursive;
     color: rgba(211, 38, 38, 0.8);
     font-size: 3.5rem;
     font-weight: 800;
-    /* text-align: center; */
 }

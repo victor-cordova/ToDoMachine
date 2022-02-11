@@ -10,18 +10,18 @@ function createRandomNumber(min, max) {
 
 function useCreateToDo(saveTodos, toDos) {
     const [createdToDo, setCreatedToDo] = React.useState("");
+    const [formsCreateToDo, setFormsCreateToDo] = React.useState(false);
 
     const onCreate = () => {
+      const randomKey = createRandomNumber(0, 300)
       if(createdToDo) {
-        const toDosUpdate = [...toDos, {...createdToDo, key: createRandomNumber(0, 300)}];
-        
+        const toDosUpdate = [...toDos, {...createdToDo, key: randomKey}];
         saveTodos(toDosUpdate);
-        // setToDos(toDosUpdate);
-        // localStorage.setItem("TODOS_V1", JSON.stringify(toDosUpdate));
+        setFormsCreateToDo(false)
       }
     }
-  
-    return { createdToDo, setCreatedToDo, onCreate };
+
+    return { createdToDo, setCreatedToDo, onCreate, formsCreateToDo, setFormsCreateToDo };
 }
 
 export {useCreateToDo};
