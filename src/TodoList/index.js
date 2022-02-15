@@ -10,7 +10,7 @@ function ToDoList (props) {
     if (totalToDos >= 6) {
         lengthTotalToDosGreater6 = true;
     }
-
+// 
     return (
         <section className="sectionList">
             <ul className={`divList ${lengthTotalToDosGreater6 && "divListScroll"}`}>

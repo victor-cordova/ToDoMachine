@@ -12,10 +12,8 @@ function ToDoSearch () {
 
     const openModal = () => {
         setFormsCreateToDo(true)
-        // const taskCreated = event.target.value;
-        // setCreatedToDo({ text:taskCreated, completed: false});
     }
-    
+    // 
     return (
         <form className="searcherForm">
             <input 

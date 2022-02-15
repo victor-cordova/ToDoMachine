@@ -11,7 +11,7 @@ function ToDoItem (props) {
             className={`checkButton ${props.toDoCompleted && "checkButton--active"}`} 
             onClick={() => props.onToDoAlter("onCheck")}
             />
-            
+            {/*  */}
             <p 
             className={`TodoItemText ${props.toDoCompleted && "TodoItemText--active"}`}
             >{props.toDoText}</p>

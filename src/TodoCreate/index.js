@@ -10,7 +10,7 @@ function ToDoCreate () {
         const taskCreated = event.target.value;
         setCreatedToDo({ text:taskCreated, completed: false});
     }
-
+// 
     const cancel = () => {
         setCreatedToDo("");
         setFormsCreateToDo(false)
